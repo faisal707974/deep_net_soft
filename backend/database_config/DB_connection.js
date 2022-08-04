@@ -6,7 +6,7 @@ const state = {
 
 module.exports.connect = function(done){
     const url = 'mongodb://localhost:27017'
-    const dbname = 'kidsWorld'
+    const dbname = 'DeepNetSoft'
 
     mongoClient.connect(url,(err,data)=>{
         if(err){
