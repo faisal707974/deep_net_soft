@@ -1,0 +1,72 @@
+.categories {
+    height: 89vh;
+
+    .first {
+        height: 200px;
+        padding: 30px 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        label {
+            margin: 0 30px;
+            font-size: 14pt;
+            font-weight: bold;
+        }
+
+        input {
+            width: 450px;
+            height: 50px;
+            border-radius: 25px;
+            padding: 20px;
+            color: red;
+            text-align: center;
+            font-size: 14pt;
+        }
+    }
+
+    .second {
+        label.heading {
+            margin: 0 60px;
+            font-size: 14pt;
+            font-weight: bold;
+            text-align: center;
+            width: 90%;
+            border-bottom: 2px solid black;
+        }
+
+        .spans {
+            padding: 30px 70px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+
+            span {
+                width: 300px;
+                text-align: center;
+                margin: 10px 0;
+
+                input {
+                    margin: 10px;
+                }
+
+                label {
+                    font-size: 14pt;
+                }
+            }
+        }
+    }
+
+    .saveButton {
+        display: flex;
+        justify-content: center;
+
+        button {
+            width: 150px;
+            border-radius: 10px;
+            position: relative;
+            bottom: -50px;
+            height: 50px;
+        }
+    }
+}

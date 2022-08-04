@@ -29,22 +29,25 @@ export default function AddProducts() {
     return (
         <>
             <div className='addProducts'>
-                <h2>add products</h2>
                 <form action="" onSubmit={saveForm}>
+                    <div className='first'>
 
-                    <label htmlFor="">Product Name</label>
-                    <input type="text" />
-
-                    <label htmlFor="">Category</label>
-                    <select name="" id="">
-                        {categories ? categories.map((obj, i) => {
-                            return (
-                                <option value={obj.category}>{obj.category}</option>
-                            )
-                        }) : null}
-                    </select>
-
-                    <button>Save</button>
+                        <label htmlFor="">Product Name</label>
+                        <input type="text" />
+                    </div>
+                    <div className='second'>
+                        <label htmlFor="">Category</label>
+                        <select name="" id="">
+                            {categories ? categories.map((obj, i) => {
+                                return (
+                                    <option value={obj.category}>{obj.category}</option>
+                                )
+                            }) : null}
+                        </select>
+                    </div>
+                    <div className='third'>
+                        <button>Save</button>
+                    </div>
                 </form>
 
             </div>

@@ -29,27 +29,18 @@ export default function Products() {
             return ({ ...obj, count: reduced[obj.category] })
         })
 
-        console.log(counted)
-
-
         let output = {
             title: res.data[0].category,
             subCategories: counted,
             products: res2.data
         }
 
-
-        console.log(res.data[0].subs)
-        // console.log(output)
-
         setSelectedCategory(output)
     }
-    // console.log(selectedCategory)
 
     return (
         <>
             <div className='products'>
-                <h1>products</h1>
                 <ul>
                     {categories &&
                         categories.map((obj, i) => {
@@ -59,8 +50,6 @@ export default function Products() {
                         })
                     }
                 </ul>
-
-
             </div>
 
             <div className='details'>

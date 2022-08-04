@@ -13,8 +13,7 @@ export default function Categories() {
             setCategories(res.data)
         }
         getCategories()
-    }, [categories])
-
+    }, [])
 
     async function formSubmission(e) {
         e.preventDefault()
@@ -37,51 +36,36 @@ export default function Categories() {
         console.log(res)
     }
 
-    async function searchCategory(e) {
-
-        // let filtered = categories.filter((obj) => {
-        //     return obj.category === e.target.value
-        // })
-
-        // let temp = categories
-        // if (filtered.length != 0) {
-        //     console.log(true)
-        // } else {
-        //     console.log(false)
-        // }
-
-
-    }
-
-
-
     return (
         <>
             <div className='categories'>
-                <h2>Categories</h2>
-
                 <form action="" onSubmit={formSubmission}>
 
-                    <label htmlFor='category'>Category name</label>
-                    <input name='category' id='category' type="text" onChange={searchCategory} />
-                    <br />
-
-                    <label>Sub categories</label>
-                    <br />
-
-                    {
-                        categories ? categories.map((object, i) => {
-                            return (
-                                <span key={i}>
-                                    <input id={object.category} value={object.category} name={object.category} type="checkbox" />
-                                    <label htmlFor="">{object.category}</label>
-                                    <br />
-                                </span>
-                            )
-                        }) : "category list is empty"
-                    }
-
-                    <button>Save</button>
+                    <div className='first'>
+                        <span>
+                            <label htmlFor='category'>Category name</label>
+                            <input name='category' id='category' type="text" />
+                        </span>
+                    </div>
+                    <div className='second'>
+                        <label className='heading'>Sub categories</label>
+                        <div className="spans">
+                            {
+                                categories ? categories.map((object, i) => {
+                                    return (
+                                        <span key={i}>
+                                            <input id={object.category} value={object.category} name={object.category} type="checkbox" />
+                                            <label htmlFor="">{object.category}</label>
+                                            <br />
+                                        </span>
+                                    )
+                                }) : "category list is empty"
+                            }
+                        </div>
+                    </div>
+                    <div className='saveButton'>
+                        <button>Save</button>
+                    </div>
                 </form>
 
             </div>

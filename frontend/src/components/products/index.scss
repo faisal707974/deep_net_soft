@@ -1,14 +1,20 @@
-.products{
-    ul{
-        li{
+.products {
+    display: inline-grid;
+
+    ul {
+        li {
             cursor: pointer;
         }
     }
 }
-.details{
-    ul{
-        li{
-            cursor:pointer;
+
+.details {
+    display: inline-grid;
+    margin-left: 100px;
+
+    ul {
+        li {
+            cursor: pointer;
         }
     }
 }

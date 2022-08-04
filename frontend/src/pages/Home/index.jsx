@@ -7,23 +7,15 @@ import Products from '../../components/products'
 
 export default function Index() {
 
-    // useEffect(() => {
-    //     async function connect() {
-    //         const res = await axios.get('http://localhost:4001/')
-    //         console.log(res.data)
-    //     }
-    //     connect()
-    // }, [])
-
-    const [page, setPage] = useState(1)
+    const [page, setPage] = useState(2)
 
     return (
         <>
             <div className="home">
                 <ul className='pageHeads'>
-                    <li onClick={() => setPage(1)}>Create Categories</li>
-                    <li onClick={() => setPage(2)}>Add New Products</li>
-                    <li onClick={() => setPage(3)}>Products</li>
+                    <li onClick={() => setPage(1)} className={page === 1 && 'active'}>Create Categories</li>
+                    <li onClick={() => setPage(2)} className={page === 2 && 'active'}>Add New Products</li>
+                    <li onClick={() => setPage(3)} className={page === 3 && 'active'}>Products</li>
                 </ul>
 
                 {
