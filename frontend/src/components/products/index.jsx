@@ -21,13 +21,30 @@ export default function Products() {
         data.subs.push(category)
         const res2 = await axios.put('http://localhost:4001/products', data)
 
+        let reduced = res2.data.reduce((acc, curr) => {
+            return acc[curr.category] ? ++acc[curr.category] : acc[curr.category] = 1, acc
+        }, {})
+
+        let counted = res.data[0].subs.map((obj) => {
+            return ({ ...obj, count: reduced[obj.category] })
+        })
+
+        console.log(counted)
+
+
         let output = {
             title: res.data[0].category,
-            subCategories: res.data[0].subs,
+            subCategories: counted,
             products: res2.data
         }
+
+
+        console.log(res.data[0].subs)
+        // console.log(output)
+
         setSelectedCategory(output)
     }
+    // console.log(selectedCategory)
 
     return (
         <>
@@ -52,9 +69,10 @@ export default function Products() {
                 <ul>
                     {selectedCategory && selectedCategory.subCategories.map((obj, i) => {
                         return (
-                            <li key={i} onClick={() => getCategoryDetails(obj._id, obj.category)}>{obj.category}</li>
+                            <li key={i} onClick={() => getCategoryDetails(obj._id, obj.category)}>{obj.category} {obj.count && '(' + obj.count + ')'} </li>
                         )
                     })}
+
                 </ul>
 
                 <h5>Products</h5>
